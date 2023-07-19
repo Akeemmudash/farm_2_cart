@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container-shadow">
+        </div>
+        <div class="container">
+          <div class="wrap">
+            <div class="headings">
+              <a id="sign-in" href="#" class="active"><span>Log In</span></a>
+              <a id="sign-up" href="#"><span>Sign Up</span></a>
+            </div>
+            <div id="sign-in-form">
+              <form>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <i id="show-pw" class="fa fa-eye"></i>
+                <input id="remember" type="checkbox">
+                <label for="remember" id="rlabel">Keep me Signed in</label>
+                <input type="submit" name="submit" value="Sign in">
+              </form>
+      
+              <footer>
+                <div class="hr"></div>
+                <div class="fp"><a href="">Forgot Password?</a></div>
+              </footer>
+            </div>
+            <div id="sign-up-form">
+              <form>
+                <label for="username">Username</label>
+                <input type="text" name="username">
+                <label for="password2">Password</label>
+                <input id="password2" type="password" name="password">
+                <label for="password0">Re-Enter Password</label>
+                <input id="password0" type="password" name="password0">
+                <input type="submit" name="submit" value="Create Account">
+              </form>
+            </div>
+          </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>

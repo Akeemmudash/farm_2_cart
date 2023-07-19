@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="" id="user-form">
+    <div class="pagemodal z-6">
+      <div class="preloader">
+        <svg
+          width="200"
+          height="200"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+          class="lds-ripple"
+          style="background: 0 0"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="4.719"
+            fill="none"
+            stroke="#1d3f72"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle
+            cx="50"
+            cy="50"
+            r="27.591"
+            fill="none"
+            stroke="#5699d2"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
+      </div>
+    </div>
+    <main>
+      <div class="container form-container">
+        <div class="d-flex flex-column justify-content-center myform mx-auto">
+          <h1 class="text-center form-title mt-3 mb-4">Sign In</h1>
+          <div
+            class="d-flex justify-content-center align-items-center bg-pry mx-auto round-logo mb-5"
+          >
+            <a
+              class="navbar-brand d-flex justify-content-center align-items-center"
+              href="#"
+              ><img
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
+                src="https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?fit=2016%2C1108&amp;ssl=1"
+                class="logo-xl"
+                alt=""
+                style="max-width: 100px"
+                srcset="
+                  https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?w=2016&amp;ssl=1            2016w,
+                  https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?resize=1024%2C563&amp;ssl=1 1024w,
+                  https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?resize=1536%2C844&amp;ssl=1 1536w,
+                  https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?resize=750%2C412&amp;ssl=1    75w,
+                  https://i0.wp.com/tamhouston.com/wp-content/uploads/2022/06/TAM-LOGO-Remodel-02@2x.png?resize=900%2C495&amp;ssl=1   200w
+                "
+                sizes="(max-width: 2016px) 100vw, 2016px"
+            /></a>
+          </div>
+          <div class="">
+            <ul class="list-unstyled row form-tabs mb-0 mx-auto w-100">
+              <li class="col-6 px-0">
+                <a
+                  href="#sign-in"
+                  onclick="slidePrev(event)"
+                  class="text-decoration-none px-3 d-inline-block h-100 bg-white txt-green position-relative login-tab text-center active fs5"
+                  >Log in</a
+                >
+              </li>
+              <li class="col-6 px-0">
+                <a
+                  href="#sign-up"
+                  onclick="slideNext(event)"
+                  class="text-decoration-none px-3 h-100 d-inline-block bg-white position-relative sign-up-tab text-center fs5"
+                  >Sign Up</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="form-tabs-swiper mx-0 bg-white p-4 mb-3 z-1">
+            <div class="">
+              <div class="tab-content form-slide1" id="sign-in">
+                <section id="user-sign-in">
+                  <form class="">
+                    <div class="mb-4">
+                      <label
+                        for="sign-in-email "
+                        class="form-label d-block email-label"
+                        ><input
+                          type="email"
+                          class="form-control py-2"
+                          id="sign-in-email"
+                          autocomplete="true"
+                          onfocus="this.classList.add('active')"
+                          onchange="validEmail(this.value)"
+                        /><span class="label-text">Email address</span></label
+                      >
+                      <div class="error-message emailCheck fs-8 ms-2">
+                        <i class="fas fa-info-circle"></i> Please Enter a valid
+                        Email Address
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label for="sign-in-password" class="form-label d-block">
+                        <div class="password-container position-relative">
+                          <input
+                            type="password"
+                            class="form-control py-2"
+                            oninput="toggleRevealButton()"
+                            id="sign-in-password"
+                            onfocus="this.classList.add('active')"
+                          />
+                          <span class="label-text">Password</span>
+                          <span
+                            class="reveal-button z-2"
+                            onclick="revealPassword()"
+                            >Show</span
+                          >
+                        </div>
+                      </label>
+                    </div>
+                    <label class="toggle fs-6 mb-3" for="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="toggle__input"
+                        id="custom-checkbox"
+                      />
+
+                      <span class="toggle-track me-2">
+                        <span class="toggle-indicator">
+                          <i class="fa-solid fa-check checkmark"></i
+                        ></span>
+                      </span>
+                      Remember me
+                    </label>
+                    <button
+                      type="submit"
+                      class="w-100 border-0 rounded-2 py-2 bg-pry text-white"
+                      onclick="signIn(event)"
+                      id="sign-in-btn"
+                    >
+                      Login
+                      <div class="spinner">
+                        <span
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </button>
+                  </form>
+                  <footer class="text-end mt-2">
+                    <a href="#" class="fs-6 btn-link">forgot password?</a>
+                  </footer>
+                </section>
+              </div>
+              <div class="tab-content form-slide2" id="sign-up">
+                <section class="" id="user-sign-up">
+                  <form class="sign-up">
+                    <div class="mb-4">
+                      <label for="name" class="form-label">
+                        <input
+                          type="text"
+                          name="name"
+                          class="form-control py-2"
+                          id="sign-up-name"
+                          onfocus="this.classList.add('active')"
+                          onchange="const isValidName = validateName()"
+                        />
+                        <span class="label-text">
+                          Full Name<sup class="required-input">*</sup></span
+                        >
+                        <div class="error-message nameCheck fs-8 ms-2">
+                          <i class="fas fa-info-circle"></i> Please Enter a
+                          valid Name
+                        </div>
+                      </label>
+                    </div>
+                    <div class="mb-4">
+                      <label for="sign-up-email" class="form-label email-label"
+                        ><input
+                          type="email"
+                          class="form-control py-2"
+                          id="sign-up-email"
+                          onchange="validSignUpEmail() "
+                          onfocus="this.classList.add('active')"
+                        /><span class="label-text"
+                          >Email address<sup class="required-input"
+                            >*</sup
+                          ></span
+                        ></label
+                      >
+
+                      <div
+                        class="error-message emailCheck sign-up-err fs-8 ms-2"
+                      >
+                        <i class="fas fa-info-circle"></i> Please Enter a valid
+                        Email Address
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label for="password" class="form-label"
+                        ><input
+                          type="password"
+                          class="form-control py-2"
+                          id="sign-up-password"
+                          onfocus="this.classList.add('active')"
+                          oninput=" const isvalidPw = validatePassword(this.value)"
+                          onchange="checkMet()"
+                        /><span class="label-text"
+                          >Password<sup class="required-input">*</sup></span
+                        ></label
+                      >
+                      <div class="error-message fs-9 txt-gray fw-bold">
+                        <ul class="ps-2 ps-sm-3">
+                          <li class="password-criteria">
+                            <p class="pw-digit">
+                              Password must contain at least one digit.
+                            </p>
+                          </li>
+                          <li class="password-criteria">
+                            <p class="pw-lowercase">
+                              Password must contain at least one lowercase
+                              letter.
+                            </p>
+                          </li>
+                          <li class="password-criteria">
+                            <p id="pw-upper-case">
+                              Password must contain at least one uppercase
+                              letter.
+                            </p>
+                          </li>
+                          <li class="password-criteria">
+                            <p id="pw-char-length">
+                              Password must be at least 6 characters long.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label for="confirmPass" class="form-label"
+                        ><input
+                          type="password"
+                          class="form-control py-2"
+                          id="confirmPass"
+                          onfocus="this.classList.add('active')"
+                        />
+                        <span class="label-text" style="left: 5px"
+                          >Confirm Password<sup class="required-input"
+                            >*</sup
+                          ></span
+                        >
+                      </label>
+                    </div>
+                    <button
+                      type="submit"
+                      id="register-btn"
+                      class="w-100 border-0 rounded-2 py-2 bg-pry text-white"
+                      onclick="signUp(event)"
+                    >
+                      Register
+                      <div class="spinner">
+                        <span
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </button>
+                  </form>
+                  <footer class="text-end mt-2">
+                    <a href="#" onclick="slidePrev(event)">Have an account?</a>
+                  </footer>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/ripple.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const signingBtns = ["register-btn", "sign-in-btn"];
+        signingBtns.forEach((signBtn) => {
+          const element = document.getElementById(signBtn);
+          element.addEventListener("click", () => {
+            rippleEL(signBtn);
+          });
+        });
+        function rippleEL(elementID) {
+          const ripple = new Ripple();
+          ripple.createRipple({
+            rippleParentId: elementID,
+            foreground: "#ffffff67",
+            background: "#143444",
+            time: 7,
+            type: "double",
+            increaseBy: 4,
+          });
+        }
+      });
+    </script>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
