@@ -103,7 +103,7 @@
       // console.log(FluentRevealEffect)
 
       __WEBPACK_IMPORTED_MODULE_0__lib_js_main___default.a.applyEffect(
-        ".reveal-btn",
+        "",
         {
           lightColor: "rgba(255, 255, 255, 0.1)",
           gradientSize: 50,
@@ -111,14 +111,14 @@
       );
 
       __WEBPACK_IMPORTED_MODULE_0__lib_js_main___default.a.applyEffect(
-        ".reveal-btn",
+        "",
         {
           clickEffect: true,
         }
       );
 
       __WEBPACK_IMPORTED_MODULE_0__lib_js_main___default.a.applyEffect(
-        ".main-nav",
+        "",
         {
           clickEffect: true,
           lightColor: "rgba(255, 255, 255, 0.7)",

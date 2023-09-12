@@ -1,4 +1,4 @@
-const swiper = new Swiper(".hero-swiper", {
+const heroSwiper = new Swiper(".hero-swiper", {
   // Optional parameters
   fadeEffect: { crossFade: true },
   direction: "horizontal",
@@ -8,9 +8,6 @@ const swiper = new Swiper(".hero-swiper", {
   },
 
   // If we need pagination
-  pagination: {
-    el: ".hero-pagin",
-  },
   slidesPerView: 1,
 });
 //
@@ -58,18 +55,17 @@ const featuredSwiper = new Swiper(".ftd-swiper", {
   },
   breakpoints: {
     575: {
-      slidesPerView: 2,
-      spaceBetween: 10,
+      slidesPerView: 1,
     },
-
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 12,
     },
     992: {
-      slidesPerView: 4,
-      spaceBetween: 10,
+      slidesPerView: 2,
+      spaceBetween: 30,
     },
+   
   },
   navigation: {
     nextEl: ".ftd-next-btn",
@@ -78,47 +74,52 @@ const featuredSwiper = new Swiper(".ftd-swiper", {
 });
 
 const SpecialOffersSwiper = new Swiper(".so-swiper", {
-  grid: {
-    fill: "row",
-    rows: 1,
-  },
-
-  spaceBetween: 4,
   slidesPerView: 2,
-  cssMode: true,
+  direction: "vertical",
+  scrollbar: {
+    el: ".scroll-bar",
+    draggable: true,
+    dragSize: "auto",
+    enabled:false,
+  },
+  allowSlideNext:false,
+  spaceBetween: 10,
+  snapOnRelease: true,
+
+  mousewheel: true,
 
   breakpoints: {
-    340: {
-      spaceBetween: 10,
-    },
-    575: {
-      slidesPerView: 3,
-      grid: {
-        rows: 1,
-      },
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 10,
-      slidesPerGroup: 4,
-    },
-    992: {
-      slidesPerView: 5,
+    576: {
       spaceBetween: 20,
-      slidesPerGroup: 5,
     },
-    // 1200: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 20,
-    //   slidesPerGroup: 3,
-    // },
   },
-
-  navigation: {
-    nextEl: ".so-next-btn",
-    prevEl: " .so-prev-btn",
+  on: {
+    reachEnd: function () {
+      // appendSlide(``)
+    },
   },
 });
+
+
+const SpecialOffersSwiper2 = new Swiper(".specialoffer2-swiper", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+
+  pagination: {
+    el: ".specialoffer2pagin",
+    clickable:true,
+    dynamicBullets:true,
+    dynamicMainBullets:1,
+  },
+  // effect:"flip",
+  loop:true,
+  navigation: {
+    nextEl: ".so2-nxt-btn",
+    prevEl: ".so2-prev-btn",
+  },
+});
+
+console.log(SpecialOffersSwiper);
 
 const quickViewSwiper = new Swiper(".quick-view-swiper", {
   slidesPerView: 1,
@@ -138,18 +139,16 @@ const quickViewSwiper = new Swiper(".quick-view-swiper", {
 
 const moreFlavorSwiper = new Swiper(".more-flavor-swiper", {
   slidesPerView: 1,
-  cssMode: true,
-  rewind: true,
+  fadeEffect: { crossFade: true },
+  // direction:"horizontal",
+  effect: "fade",
 
   navigation: {
-    nextEl: ".more-flav-next-btn ",
+    nextEl: ".more-flav-next-btn",
     prevEl: ".more-flav-prev-btn",
   },
-  pagination: {
-    el: ".more-flavor-pagin",
-    clickable: true,
-  },
 });
+console.log(moreFlavorSwiper);
 
 const enjoyMinistrySwiper = new Swiper(".enjoy-swiper", {
   grid: {
@@ -177,15 +176,15 @@ const enjoyMinistrySwiper = new Swiper(".enjoy-swiper", {
       slidesPerGroup: 4,
     },
     992: {
-      slidesPerView: 5,
+      slidesPerView: 4,
       spaceBetween: 20,
       slidesPerGroup: 5,
     },
-    // 1200: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 20,
-    //   slidesPerGroup: 3,
-    // },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+      slidesPerGroup: 3,
+    },
   },
 
   navigation: {
@@ -204,17 +203,19 @@ const onSaleSwiper = new Swiper(".on-sale-swiper", {
   },
   breakpoints: {
     575: {
-      slidesPerView: 2,
-      spaceBetween: 10,
+      slidesPerView: 1,
     },
-
     768: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+      slidesPerView: 1,
+      spaceBetween: 20,
     },
     992: {
-      slidesPerView: 4,
-      spaceBetween: 10,
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 2,
+      spaceBetween: 30,
     },
   },
   navigation: {
@@ -321,7 +322,6 @@ const ethnicDelicacySwiper = new Swiper(".delicacy-swiper", {
     // },
   },
 });
-
 // function handleGrid() {
 //   const smallScreen = window.matchMedia("(max-width:575px)");
 //   if (smallScreen.matches) {
@@ -334,3 +334,54 @@ const ethnicDelicacySwiper = new Swiper(".delicacy-swiper", {
 // }
 
 // handleGrid();
+// function setEqualSlideHeight(swiper) {
+//   let swiperClass = swiper.el.classList[0];
+//   let slides = document.querySelectorAll(`.${swiperClass} .swiper-slide`);
+//   let maxHeight = 0;
+
+//   // Find the maximum height among all slides
+//   slides.forEach(function (slide) {
+//     let slideHeight = slide.offsetHeight;
+//     if (slideHeight > maxHeight) {
+//       maxHeight = slideHeight;
+//     }
+//   });
+
+//   // Set the same height for all slides
+//   slides.forEach(function (slide) {
+//     slide.style.height = maxHeight + "px";
+
+//     swiper.update();
+//   });
+
+// const swipers = [
+//   heroSwiper,
+//   ethnicDelicacySwiper,
+//   topCatSwiper,
+//   featuredSwiper,
+//   SpecialOffersSwiper,
+//   quickViewSwiper,
+//   enjoyMinistrySwiper,
+//   onSaleSwiper,
+//   greensSwiper,
+// ];
+// // Update Swiper to recalculate slide positions
+// swipers.forEach((swiperInstance) => {
+//   swiperInstance.update();
+// });
+// }
+
+// Call the function on Swiper initialization and window resize
+
+window.addEventListener("resize", () => {
+  ethnicDelicacySwiper.update();
+  heroSwiper.updateSize();
+  topCatSwiper.updateSize();
+  // featuredSwiper.updateSize();
+  console.log("specisal");
+  SpecialOffersSwiper.updateSize();
+  // quickViewSwiper.updateSize();
+  // onSaleSwiper.updateSize();
+  moreFlavorSwiper.updateSize();
+  enjoyMinistrySwiper.updateSize();
+});
