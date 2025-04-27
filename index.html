@@ -5,9 +5,70 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="app" class=""></div>
+    <div id="app" class="text-white">
+      <nav id="navbar" class="nav fixed w-full rounded-full top-10 z-[1000]">
+        <div class="container flex justify-between items-center py-4">
+          <a href="/" class="logo">farm2cart</a>
+          <ul class="nav__list flex gap-4 items-center">
+            <li><a class="nav__link" href="/">Home</a></li>
+            <li><a class="nav__link" href="/about.html">About</a></li>
+            <li><a class="nav__link" href="/shop.html">Shop</a></li>
+
+            <li>
+              <a class="auth primary-btn ripple-btn" href="/sign-in.html"
+                >Sign in</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <section
+          id="hero"
+          style="background-image: url(/hero__bg.png)"
+          class="h-dvh w-full bg-no-repeat bg-cover"
+        >
+          <div class="container flex items-center h-full">
+            <div class="mt-10">
+              <h1
+                class="font-semibold text-white text-7xl leading-[1.1] mb-5 text-center"
+              >
+                Farm to Business: Nigeria's Premier B2C Fruits and Vegetables
+                Marketplace.
+              </h1>
+              <button class="light-btn ripple-btn mx-auto block uppercase">
+                Start Shopping
+              </button>
+            </div>
+          </div>
+        </section>
+        <section id="about" class="h-96 bg-primary-90 py-10 flex items-center">
+          <div class="container">
+            <h2 class="text-center">
+              <span class="logo green">farm2cart</span>
+            </h2>
+            <p class="mt-10 text-2xl">
+              At Farm2Cart, we connect you directly to the freshest produce and
+              food essentials—sourced straight from local farms and trusted
+              suppliers. Our goal is simple: deliver quality, farm-fresh
+              goodness to your doorstep without the middlemen. From fruits and
+              veggies to pantry staples, we make healthy eating easy,
+              affordable, and convenient.
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

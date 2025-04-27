@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+@theme {
+  --font-pacifico: "Pacifico", cursive;
+  --font-inter: "Inter", sans-serif;
+
+  /* Colors */
+
+  /* PRIMARY */
+  --color-primary: #009933;
+  --color-primary-10: #ccebd6;
+  --color-primary-20: #aaddbb;
+  --color-primary-30: #80cc99;
+  --color-primary-40: #55bb77;
+  --color-primary-50: #2aaa55;
+  --color-primary-60: #00802a;
+  --color-primary-70: #006622;
+  --color-primary-80: #004c19;
+  --color-primary-90: #003311;
+  --color-primary-100: #001f0a;
+
+  /* SECONDARY */
+  --color-secondary: #33cc66;
+  --color-secondary-10: #d6f5e0;
+  --color-secondary-20: #bbeecc;
+  --color-secondary-30: #99e5b2;
+  --color-secondary-40: #77dd99;
+  --color-secondary-50: #55d480;
+  --color-secondary-60: #2aaa55;
+  --color-secondary-70: #228844;
+  --color-secondary-80: #196633;
+  --color-secondary-90: #003311;
+  --color-secondary-100: #0a2914;
+}
+
+body {
+  @apply font-inter;
+}
+.container {
+  @apply mx-auto px-6;
+}
+.logo {
+  @apply select-none text-white/95 font-pacifico text-3xl;
+}
+.logo.green {
+  @apply text-primary-50;
+}
+.nav__link {
+  @apply text-white font-semibold text-lg block px-4 hover:text-primary-30;
+}
+.primary-btn {
+  @apply text-white bg-primary text-lg  px-8 py-3 hover:bg-primary-50 cursor-pointer transition-colors duration-75 font-semibold;
+}
+.light-btn {
+  @apply text-primary bg-white text-lg  px-8 py-3 hover:bg-primary-10 cursor-pointer transition-colors duration-75 font-semibold;
+}
+.ripple-btn {
+  @apply relative overflow-hidden block;
+}
+.ripple {
+  @apply block rounded-full aspect-square bg-primary-30 opacity-40 absolute animate-[ripple-animation_600ms_ease-out];
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/* check if cn is compatible with vanilla vite */
